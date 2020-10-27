@@ -55,7 +55,7 @@ Usage
 ```
 
 #### Note:  It is very critical to provide the right source and target FlashBlades.
-     Target or destination FB is where the excessive objects will be removed.
+#### Target or destination FB is where the excessive objects will be removed.
 
 ```
 
