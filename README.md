@@ -52,6 +52,8 @@ Usage
      dstbucket=<target bucket name>
 
   3. Create a directory named pure which will hold the runtime files and log files.
+     Note: Make sure to have enough storage space for this pure directory depending on the excessive object counts.
+     Each Splunk object may consume around 150 bytes and hence 1M objects can consume around 150MB.
 
   4. Make sure the directory you are running the script from has the following files/dir.
 
