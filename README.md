@@ -46,15 +46,18 @@ Usage
   
   2. Create an environment file named objsync.conf with following information.
  
-     **Note:  It is very critical to provide the right source and target FlashBlades.
-     Target or destination FB is where the excessive objects will be removed.**
-
      srccreds=<name from credentials>
      dstcreds=<name from credentials>
      srcvip=http://<source data vip>
      dstvip=http://<target data vip>
      srcbucket=<source bucket name>
      dstbucket=<target bucket name>
+```
+
+     **Note:  It is very critical to provide the right source and target FlashBlades.**
+     **Target or destination FB is where the excessive objects will be removed.**
+
+```
 
   3. Create a directory named pure which will hold the runtime files and log files.
      Note: Make sure to have enough storage space for this pure directory depending on the excessive object counts.
