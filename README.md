@@ -2,7 +2,9 @@
   Toolkit to synchronize target FlashBlade bucket with that of source FlashBlade bucket
 
   This repository contains two scripts
+
     list.sh - Lists the excessive objects of a given bucket at the target FlashBlade that are not in the source FlashBlade
+
     sync.sh - Removes the excessive objects identified by the list.sh script
  
 ## Who should be using this toolkit?
