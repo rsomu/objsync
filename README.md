@@ -1,11 +1,13 @@
 # objsync
   Toolkit to synchronize target FlashBlade bucket with that of source FlashBlade bucket
 
-  This repository contains two scripts
+  This repository contains three scripts
 
     list.sh - Lists the excessive objects of a given bucket at the target FlashBlade that are not in the source FlashBlade
 
     sync.sh - Removes the excessive objects identified by the list.sh script
+
+    csv.sh - Reports the object count and size at Splunk index level in a csv format for both the source and target FB
  
 ## Who should be using this toolkit?
 
@@ -67,7 +69,11 @@ Usage
 
 Usage
 ```
-  To get the list of excessive objects across all indexes from the target FB
+  To get the summary of objects and storage usage at an Splunk index level across both FBs 
+
+  docker run --rm -v `pwd`/credentials:/root/.aws/credentials --env-file=`pwd`/objsync.conf --mount type=bind,source=`pwd`/pure,target=/pure objsync csv.sh
+
+  To get the list of excessive objects across all Splunk indexes from the target FB
 
   docker run --rm -v `pwd`/credentials:/root/.aws/credentials --env-file=`pwd`/objsync.conf --mount type=bind,source=`pwd`/pure,target=/pure objsync list.sh
 
