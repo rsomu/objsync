@@ -54,8 +54,8 @@ Usage
      dstbucket=<target bucket name>
 ```
 
-     **Note:  It is very critical to provide the right source and target FlashBlades.**
-     **Target or destination FB is where the excessive objects will be removed.**
+#### Note:  It is very critical to provide the right source and target FlashBlades.
+     Target or destination FB is where the excessive objects will be removed.
 
 ```
 
