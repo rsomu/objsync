@@ -14,7 +14,6 @@ COPY --from=s5cmd-builder /go/s5cmd/s5cmd /go/bin/
 RUN apk update && apk add bash
 RUN mkdir /root/.aws
 
-COPY ./sync.sh /usr/bin/
-COPY ./list.sh /usr/bin/
+COPY ./*.sh /usr/bin/
 RUN chmod +x /usr/bin/*.sh
 CMD ["/usr/bin/list.sh"]
