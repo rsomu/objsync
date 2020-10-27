@@ -45,6 +45,9 @@ Usage
      aws_secret_access_key=xxxxxxx
   
   2. Create an environment file named objsync.conf with following information.
+ 
+     **Note:  It is very critical to provide the right source and target FlashBlades.
+     Target or destination FB is where the excessive objects will be removed.**
 
      srccreds=<name from credentials>
      dstcreds=<name from credentials>
