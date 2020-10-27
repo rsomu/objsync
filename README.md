@@ -13,11 +13,15 @@
 
 ## How to use this toolkit?
 
-  The toolkit has two scripts which are packaged in a docker container image.
+  The toolkit has two scripts which are packaged in a docker container image. 
 
   1. Run the docker image with list.sh as the first step which will create a separate command file (cmd) for every Splunk level index under the /pure directory within the container which is persisted at the host.
   2. Run the docker image with sync.sh which will go over the command files at an index level generated from the previous step and removes the object at the target FB. Once removed, it marks the command files as done. 
    
+## What does the toolkit do?
+
+  The list script compares the objects between the source and target using a combination of s5cmd command and comm command and identifies the excessive objects from the target FB and writes to a .cmd file.  The .cmd file contains the command to remove all the excessive objects.  The sync script goes after all the .cmd files generated and execute them through s5cmd to remove the objects.  Both scripts will generate a log file listing the activities performed.
+  
 ## Build the docker image
   Make sure the shell scripts are in the same directory as the Dockerfile is.
 
@@ -61,7 +65,7 @@ Usage
 
 Usage
 ```
-  To get the list of excessive objects across all indexes
+  To get the list of excessive objects across all indexes from the target FB
 
   docker run --rm -v `pwd`/credentials:/root/.aws/credentials --env-file=`pwd`/objsync.conf --mount type=bind,source=`pwd`/pure,target=/pure objsync list.sh
 
