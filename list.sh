@@ -14,7 +14,7 @@ logfile=/pure/object_list_${ts}.log
 
 AWK='{etag=$3; size=$4; $1=""; $2=""; $3=""; $4=""; key=$0; print key,size,etag}'
 
-mesg $logfile "Starting object comparison at index level on $dstvip"
+mesg $logfile "Starting object comparison at index level on the target ==> $dstvip"
 
 ct=0
 AWS_PROFILE=$dstcreds s5cmd --endpoint-url $dstvip ls 's3://'"$dstbucket" | while read ignore index;
@@ -31,6 +31,6 @@ do
    | sed "$SED" > /pure/$index.cmd
 done 
 
-mesg $logfile "========= Excessive objects at $dstvip ========= "
+mesg $logfile "========= Excessive objects at target ==> $dstvip ========= "
 wc -l /pure/*.cmd >> $logfile
 mesg $logfile "Completed object comparisons on indexes."

@@ -12,7 +12,7 @@ mesg()
 ts=`date +%Y%m%d-%H%M%S`
 logfile=/pure/object_sync_${ts}.log
 
-mesg $logfile "Starting object synchornization at index level on $dstvip"
+mesg $logfile "Starting object synchornization at index level at target ==> $dstvip"
 ct=0
 if [ `ls -1 /pure/*.cmd 2>/dev/null | wc -l` -eq 0 ]; 
 then
