@@ -5,6 +5,8 @@
 
     list.sh - Lists the excessive objects of a given bucket at the target FlashBlade that are not in the source FlashBlade
 
+    cmp.sh - Compare the objects of given Splunk indexes at the target FlashBlade that are not in the source FlashBlade
+
     sync.sh - Removes the excessive objects identified by the list.sh script
 
     csv.sh - Reports the object count and size at Splunk index level in a csv format for both the source and target FB
@@ -82,6 +84,10 @@ Usage
   To get the list of excessive objects across all Splunk indexes from the target FB
 
   docker run --rm -v `pwd`/credentials:/root/.aws/credentials --env-file=`pwd`/objsync.conf --mount type=bind,source=`pwd`/pure,target=/pure objsync list.sh
+
+  To compare the objects of a given list of Splunk indexes from the target FB
+
+  docker run --rm -v `pwd`/credentials:/root/.aws/credentials --env-file=`pwd`/objsync.conf --mount type=bind,source=`pwd`/pure,target=/pure objsync cmp.sh
 
   To remove the excessive objects across all indexes at the target FB
 
