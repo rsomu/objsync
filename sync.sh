@@ -1,3 +1,4 @@
+#!/bin/bash
 # To synchronize the objects on dst that are not on src by deleting them
 
 # Usage: sync.sh 
