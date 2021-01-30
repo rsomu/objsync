@@ -71,6 +71,12 @@ Usage
      objsync.conf
      pure (directory)
 
+  5. To run the cmp.sh for a given list of indexes, create a file named index.lst under pure directory with the list of index name, one per line.
+
+     cat pure/index.lst
+     itso_perfmon
+     threat_activity
+
 ```
 
 ## Running the scripts
