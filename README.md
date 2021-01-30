@@ -75,6 +75,7 @@ Usage
 
      cat pure/index.lst
      itso_perfmon
+     jdao_perfmon
      threat_activity
 
 ```
